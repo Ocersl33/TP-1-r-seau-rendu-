@@ -187,7 +187,7 @@ rtt min/avg/max/mdev = 28.724/30.842/32.338/1.322 ms
 capturez le ping depuis john avec tcpdump
 
 analysez un ping aller et le retour qui correspond et mettez dans un tableau :
-
+```
 [oceane@localhost ~]$ ping 8.8.8.8
 sudo tcpdump -i enp0s8 -w tp3_accesinternet.pcap
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
@@ -199,15 +199,44 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 3 packets transmitted, 3 received, 0% packet loss, time 2004ms
 rtt min/avg/max/mdev = 22.152/23.526/24.613/1.024 ms
 [oceane@localhost ~]$
-
+```
 effectuez un ping 8.8.8.8 depuis john:
 
-![](https://i.imgur.com/SpsdRQP.png)
 
 capturez le ping depuis john avec tcpdump:
+
+[analyse de trammes](tp3_ping-google.com.pcap)
+
 
 ![](https://i.imgur.com/zYg2XbH.jpg)
 
 
 ## III. DHCP
 
+1. Mise en place du serveur DHCP
+🌞Sur la machine john, vous installerez et configurerez un serveur DHCP (go Google "rocky linux dhcp server").
+
+Après avoir installé et configuré le serveur DHCP sur john, voici l'adresse IP  dynamique en DHCP de bob: 
+192.168.56.104. 
+
+Pour ce faire j'ai rentré ip a puis sudo nano /etc/sysconfig/network-scripts puis DEVICE=enp0s8
+
+BOOTPROTO=dhcp
+ONBOOT=yes
+ et j'ai rentré le nom du fichier : /etc/sysconfig/network-scripts/ifcfg-enp0s8 
+ 
+et j'ai reddémarrer l'interface:
+sudo nmcli con reload
+sudo nmcli con up "System enp0s8"
+sudo systemctl restart NetworkManager puis ip a. 
+
+
+🌞Améliorer la configuration du DHCP
+Pour ajouter une route par default dans la configuration DHCP, dans la configuration DHCP directement j'ai mis cette commande : 
+ip route add default via 10.3.1.254 dev enp0s8.
+
+Pour ajouter le serveur DNS, j'ai mis cette commande : 
+/etc/resolv.conf
+
+BOB:
+commande ip a pour de nouveau avoir l'adresse ip.
