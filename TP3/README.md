@@ -3,6 +3,7 @@
 ### 1.Echange ARP
 🌞Générer des requêtes ARP
 commande: ssh oceane@10.3.1.12 adresse IP marcel que j'ai ping dans john. 
+```
 ping 10.3.1.12
 PING 10.3.1.12 (10.3.1.12) 56(84) bytes of data.
 64 bytes from 10.3.1.12: icmp_seq=1 ttl=64 time=0.993 ms
@@ -30,7 +31,7 @@ PING 10.3.1.12 (10.3.1.12) 56(84) bytes of data.
 --- 10.3.1.12 ping statistics ---
 21 packets transmitted, 21 received, 0% packet loss, time 20164ms
 rtt min/avg/max/mdev = 0.601/1.156/1.611/0.354 ms
-
+```
 - pc john : 
 [oceane@localhost ~]$ ip neigh show
 10.3.1.12 dev enp0s8 lladdr 08:00:27:12:81:c3 STALE
