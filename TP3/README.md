@@ -33,9 +33,11 @@ PING 10.3.1.12 (10.3.1.12) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.601/1.156/1.611/0.354 ms
 ```
 - pc john : 
+```
 [oceane@localhost ~]$ ip neigh show
 10.3.1.12 dev enp0s8 lladdr 08:00:27:12:81:c3 STALE
 10.3.1.1 dev enp0s8 lladdr 0a:00:27:00:00:2a REACHABLE
+```
 - pc marcel:
 [oceane@localhost ~]$ ip neigh show
 10.3.1.1 dev enp0s8 lladdr 0a:00:27:00:00:2a DELAY
