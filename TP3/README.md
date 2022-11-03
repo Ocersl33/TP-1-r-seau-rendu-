@@ -39,10 +39,11 @@ rtt min/avg/max/mdev = 0.601/1.156/1.611/0.354 ms
 10.3.1.1 dev enp0s8 lladdr 0a:00:27:00:00:2a REACHABLE
 ```
 - pc marcel:
+```
 [oceane@localhost ~]$ ip neigh show
 10.3.1.1 dev enp0s8 lladdr 0a:00:27:00:00:2a DELAY
 10.3.1.11 dev enp0s8 lladdr 08:00:27:d3:88:33 STALE
-
+```
 
 pour voir la mac de Marcel dans le pc de john: ip neigh show
 pour voir la mac de Marcel depuis le pc de Marcel: ip a 
@@ -55,7 +56,7 @@ pour voir la mac de Marcel depuis le pc de Marcel: ip a
 ## II. Routage
 🌞Activer le routage sur le noeud router
 
-
+```
 [oceane@localhost ~]$ sudo firewall-cmd --add-masquerade --zone=public
 [sudo] password for oceane:
 success
@@ -79,14 +80,14 @@ public (active)
   source-ports:
   icmp-blocks:
   rich rules:
-  
+  ```
   🌞Ajouter les routes statiques nécessaires pour que john et marcel puissent se ping
   
  Commande pour ajouter les routes statiques:
  sudo ip route add 10.3.2.0/24 via 10.3.1.254 dev enp0s8
  
  sudo ip route add 10.3.1.0/24 via 10.3.2.254 dev  enp0s8
-
+```
 164 bytes from 10.3.2.12: icmp_seq=1 ttl=63 time=1.52 ms
 64 bytes from 10.3.2.12: icmp_seq=2 ttl=63 time=1.07 ms
 64 bytes from 10.3.2.12: icmp_seq=3 ttl=63 time=1.02 ms
@@ -95,7 +96,7 @@ public (active)
 --- 10.3.2.12 ping statistics ---
 4 packets transmitted, 4 received, 0% packet loss, time 3005ms
 rtt min/avg/max/mdev = 0.862/1.117/1.521/0.245 ms
-
+```
 
 2. Analyse de trames
 🌞Analyse des échanges ARP
@@ -114,6 +115,7 @@ rtt min/avg/max/mdev = 0.862/1.117/1.521/0.245 ms
 John:
 
 GATEWAY=10.0.2.15
+```
 [oceane@localhost ~]$ sudo systemctl restart NetworkManager
 [oceane@localhost ~]$ ping 8.8.8.8
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
@@ -128,29 +130,8 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 --- 8.8.8.8 ping statistics ---
 7 packets transmitted, 7 received, 0% packet loss, time 6009ms
 rtt min/avg/max/mdev = 23.003/25.495/29.362/2.249 ms
-[oceane@localhost ~]$ sudo nano /etc/sysconfig/network
-[oceane@localhost ~]$ sudo systemctl restart NetworkManager
-[oceane@localhost ~]$ dig google.com
-
-; <<>> DiG 9.16.23-RH <<>> google.com
-;; global options: +cmd
-;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52219
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
-
-;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags:; udp: 512
-;; QUESTION SECTION:
-;google.com.                    IN      A
-
-;; ANSWER SECTION:
-google.com.             300     IN      A       142.250.179.78
-
-;; Query time: 29 msec
-;; SERVER: 8.8.8.8#53(8.8.8.8)
-;; WHEN: Fri Oct 28 12:14:13 CEST 2022
-;; MSG SIZE  rcvd: 55
-
+```
+```
 [oceane@localhost ~]$ ping google.com
 PING google.com (142.250.179.78) 56(84) bytes of data.
 64 bytes from par21s19-in-f14.1e100.net (142.250.179.78): icmp_seq=1 ttl=112 time=24.2 ms
@@ -160,11 +141,13 @@ PING google.com (142.250.179.78) 56(84) bytes of data.
 --- google.com ping statistics ---
 3 packets transmitted, 3 received, 0% packet loss, time 2005ms
 rtt min/avg/max/mdev = 24.246/25.491/26.899/1.089 ms
-[oceane@localhost ~]$
+```
+
 
 Marcel:
 GATEWAY=10.0.2.15
- sudo nano /etc/systconfig/network
+```
+sudo nano /etc/systconfig/network
 [sudo] password for oceane:
 [oceane@localhost ~]$ sudo nano /etc/systconfig/network
 [oceane@localhost ~]$ cd
@@ -183,7 +166,7 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 --- 8.8.8.8 ping statistics ---
 4 packets transmitted, 4 received, 0% packet loss, time 2997ms
 rtt min/avg/max/mdev = 28.724/30.842/32.338/1.322 ms
-[oceane@localhost ~]$
+```
 
 🌞Analyse de trames
 
