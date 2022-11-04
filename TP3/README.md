@@ -166,7 +166,7 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 --- 8.8.8.8 ping statistics ---
 4 packets transmitted, 4 received, 0% packet loss, time 2997ms
 rtt min/avg/max/mdev = 28.724/30.842/32.338/1.322 ms
-```
+
 
 🌞Analyse de trames
 
@@ -226,3 +226,5 @@ Pour ajouter le serveur DNS, j'ai mis cette commande :
 
 BOB:
 commande ip a pour de nouveau avoir l'adresse ip.
+
+(Pour le III DHCP j'aurai essayé). 
