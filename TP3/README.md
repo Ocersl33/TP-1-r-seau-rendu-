@@ -227,4 +227,4 @@ Pour ajouter le serveur DNS, j'ai mis cette commande :
 BOB:
 commande ip a pour de nouveau avoir l'adresse ip.
 
-(Pour le III DHCP j'aurai essayé). 
+(Pour le III DHCP, j'ai fais ce que j'ai pu mais je n'y arrive pas. J'ai fais de nombreuse recherche internet, je t'ai demandé de l'aide et j'ai demandé de l'aide à mes camarades, j'ai compris ce qui aie demandé mais je n'arrive pas à le faire).
