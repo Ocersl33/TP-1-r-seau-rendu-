@@ -203,7 +203,7 @@ dns-server.tp4.b1.      86400   IN      A       10.4.1.201
 
  OPT PSEUDOSECTION:
 EDNS: version: 0, flags:; udp: 1232
-COOKIE: bd516d4a8c0468ab010000006357e702a93ad2652cdcb9a2 (good)
+COOKIE: bd516d4a8c0468ab010000006357e702a93ad2652cdcb9a2 
  QUESTION SECTION:
 google.com.                    IN      A
 
