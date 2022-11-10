@@ -182,7 +182,7 @@ Got answer:
 
  OPT PSEUDOSECTION:
   EDNS: version: 0, flags:; udp: 1232
- COOKIE: 9b711f49ccabe622010000006357e7290c5df5bd63baa1ad (good)
+ COOKIE: 9b711f49ccabe622010000006357e7290c5df5bd63baa1ad 
  QUESTION SECTION:
 dns-server.tp4.b1.             IN      A
 
