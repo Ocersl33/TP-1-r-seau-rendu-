@@ -177,7 +177,7 @@ success
   DiG 9.16.23-RH  dns-server.tp4.b1
  global options: +cmd
 Got answer:
- ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 57615
+  opcode: QUERY, status: NOERROR, id: 57615
  flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
  OPT PSEUDOSECTION:
@@ -195,10 +195,10 @@ dns-server.tp4.b1.      86400   IN      A       10.4.1.201
  MSG SIZE  rcvd: 90
 [root@node1 ~]$ dig google.com
 
- <<>> DiG 9.16.23-RH <<>> google.com
+ DiG 9.16.23-RH  google.com
  global options: +cmd
  Got answer:
- ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 33888
+  opcode: QUERY, status: NOERROR, id: 33888
  flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
  OPT PSEUDOSECTION:
